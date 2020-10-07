@@ -1,0 +1,20 @@
+node{
+   stage('SCM Checkout'){
+       git credentialsId: 'git-creds', url: 'https://github.com/ramakrishna0317/maven.git'
+   }
+   stage('maven Package'){
+     def mavenHome = tool name: 'maven', type: 'maven'
+     def mavenCMD = "${mavenHome}/bin/maven"
+     sh "${mavenCMD} clean package"
+     } 
+
+   
+   stage('pushing to tomcat server'){
+   sh label: '', script: '''sudo mv /var/lib/jenkins/workspace/pipeline/target/java-maven-1.0-SNAPSHOT.war /opt/apache-tomcat-8.5.58/webapps/'''
+   }
+
+
+
+
+
+
