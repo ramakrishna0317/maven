@@ -5,7 +5,7 @@ node{
    stage('gradle Package'){
      def gradleHome = tool name: 'gradle', type: 'gradle'
      def gradleCMD = "${gradleHome}/bin/gradle"
-     sh "${gradleCMD} clean build"
+     sh "${gradleCMD} clean build -x test"
    } 
 
    
