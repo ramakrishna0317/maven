@@ -10,14 +10,10 @@ node{
 
    
    stage('pushing to tomcat server'){
-   sh label: '', script: '''sudo mv /var/lib/jenkins/workspace/pipeline/build/libs/functionhall-service-0.0.1-SNAPSHOT.war /opt/apache-tomcat-8.5.58/webapps/'''
+   sh label: '', script: '''apt-get update'''
    }
 
 stage('jar running'){
    sh label: '', script: '''sudo java -jar /var/lib/jenkins/workspace/pipeline/build/libs/functionhall-service-0.0.1-SNAPSHOT.war'''
    }
 }
-
-
-
-
