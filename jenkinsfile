@@ -13,6 +13,7 @@ node{
    sh label: '', script: '''sudo mv /var/lib/jenkins/workspace/pipeline/target/java-maven-1.0-SNAPSHOT.war /opt/apache-tomcat-8.5.58/webapps/'''
    }
 
+}
 
 
 
